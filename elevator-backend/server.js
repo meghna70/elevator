@@ -31,5 +31,8 @@ app.post('/reset', (req, res) => {
   res.json({ ok: true });
 });
 
+app.get('/', (req, res) => {
+  res.send('Elevator simulation backend is running!');
+});
 const PORT = 4000;
 app.listen(PORT, () => console.log(` Backend running on http://localhost:${PORT}`));
