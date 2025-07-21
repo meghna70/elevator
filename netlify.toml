@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"         # or "yarn build" if you're using Yarn
+  publish = "dist"                  # or "build" if using CRA
+
+[dev]
+  command = "npm run dev"
+  port = 5173
+  targetPort = 5173
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
