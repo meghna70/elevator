@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import 'react-tooltip/dist/react-tooltip.css'; 
 import {
   initSimulation,
   getStatus,
@@ -17,7 +18,7 @@ function App() {
   const [running, setRunning] = useState(false);
   const intervalRef = useRef(null);
 
-  // Poll status every 500ms when running
+
   useEffect(() => {
     if (running) {
       intervalRef.current = setInterval(async () => {
@@ -68,7 +69,7 @@ function App() {
 
       <MetricsDashboard metrics={state.metrics} />
 
-      {/* floors */}
+      
       <div className="flex gap-6 mt-6">
         <div>
           {[...Array(state.floors)].map((_, i) => {
@@ -76,21 +77,21 @@ function App() {
             const waitingPassengers = state.passengers.filter(p => p.status === 'waiting' && p.originFloor === floorNum);
             const elevatorsHere = state.elevators.filter(e => e.currentFloor === floorNum);
             return (
-              <div key={floorNum} className="flex items-center" style={{ height: 80 }}>
+              <div key={floorNum} className="flex items-center" style={{ height: 90 }}>
                 <Floor floor={floorNum} waitingPassengers={waitingPassengers} elevatorsHere={elevatorsHere} />
                 <div className="w-5 h-10" />
               </div>
             );
           })}
         </div>
-        {/* Elevators */}
+
         <div className="flex">
           {state.elevators.map((e, i) => (
-            <Elevator key={e.id} elevator={e} floors={state.floors} width={80} height={80} />
+            <Elevator key={e.id} elevator={e} floors={state.floors} width={90} height={80} />
           ))}
         </div>
       </div>
-      {/* passenger table */}
+ 
       <div className="mt-8 w-full max-w-2xl">
         <PassengerTable passengers={state.passengers} />
       </div>
