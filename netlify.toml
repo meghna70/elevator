@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"         # or "yarn build" if you're using Yarn
-  publish = "dist"                  # or "build" if using CRA
+  command = "npm run build"         
+  publish = "dist"                 
 
 [dev]
   command = "npm run dev"
