@@ -10,7 +10,7 @@ export default function Controls({ onInit, onStart, onStop, onReset, onSpeed }) 
       <label># Elevators <input type="number" value={n} min="1" max="10" onChange={e => setN(+e.target.value)} className="w-16 ml-1 p-1" /></label>
       <label># Floors <input type="number" value={k} min="2" max="30" onChange={e => setK(+e.target.value)} className="w-16 ml-1 p-1" /></label>
       <label># Passengers <input type="number" value={r} min="1" max="100" onChange={e => setR(+e.target.value)} className="w-16 ml-1 p-1" /></label>
-      <button className="btn btn-primary" onClick={() => onInit(n,k,r)}>Init</button>
+      <button className="btn btn-primary" onClick={() => onInit(n,k,r)}>Initialize</button>
       <button className="btn btn-success" onClick={onStart}>Start</button>
       <button className="btn btn-warning" onClick={onStop}>Stop</button>
       <button className="btn btn-danger" onClick={onReset}>Reset</button>
